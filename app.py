@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 import os
 import random
 
@@ -43,6 +43,46 @@ def dummy_ai_prediction():
     disease = random.choice(list(DISEASE_DB.keys()))
     return disease, DISEASE_DB[disease]
 
+# -------------------- PAGE ROUTES --------------------
+
+@app.route("/")
+def home():
+    return render_template("index.html")
+
+@app.route("/login")
+def login():
+    return render_template("login.html")
+
+@app.route("/dashboard")
+def dashboard():
+    return render_template("dashboard.html")
+
+@app.route("/predict")
+def predict():
+    return render_template("predict.html")
+
+@app.route("/disease")
+def disease():
+    return render_template("disease.html")
+
+@app.route("/admin")
+def admin():
+    return render_template("admin.html")
+
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
+@app.route("/contact")
+def contact():
+    return render_template("contact.html")
+
+@app.route("/how-it-works")
+def how_it_works():
+    return render_template("how-it-works.html")
+
+# -------------------- AI API ROUTE --------------------
+
 @app.route("/analyze", methods=["POST"])
 def analyze():
     file = request.files["image"]
@@ -59,6 +99,8 @@ def analyze():
         "prevention": info["prevention"],
         "treatment": info["treatment"]
     })
+
+# -------------------- RUN --------------------
 
 if __name__ == "__main__":
     app.run(debug=True)
