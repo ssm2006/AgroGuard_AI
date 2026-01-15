@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard | Cotton AI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+    <header class="navbar">
+        <div class="logo">🌿 Cotton AI</div>
+        <nav>
+            <a href="index.html" class="active">Home</a>
+            <a href="predict.html">Predict</a>
+            <a href="how-it-works.html">How It Works</a>
+            <a href="disease.html">Diseases</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="contact.html">Contact</a>
+            <button class="btn-primary">Try Prediction</button>
+        </nav>
+    </header>
+
+<!-- ADMIN HEADER -->
+<section class="page-header">
+    <h1>Admin Dashboard</h1>
+    <p>System monitoring and AI performance overview</p>
+</section>
+
+<!-- ADMIN SUMMARY -->
+<section class="dashboard-summary">
+
+    <div class="summary-card">
+        <h2>248</h2>
+        <p>Total Users</p>
+    </div>
+
+    <div class="summary-card">
+        <h2>1,542</h2>
+        <p>Total Predictions</p>
+    </div>
+
+    <div class="summary-card">
+        <h2>96.4%</h2>
+        <p>Model Accuracy</p>
+    </div>
+
+    <div class="summary-card">
+        <h2>8</h2>
+        <p>Diseases Supported</p>
+    </div>
+
+</section>
+
+<!-- SYSTEM ACTIVITY -->
+<section class="dashboard-history">
+    <h2>Recent System Activity</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>User</th>
+                <th>Disease Detected</th>
+                <th>Confidence</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>15 Aug 2026</td>
+                <td>Farmer_102</td>
+                <td>Leaf Curl Virus</td>
+                <td>92%</td>
+            </tr>
+
+            <tr>
+                <td>14 Aug 2026</td>
+                <td>Farmer_087</td>
+                <td>Bacterial Blight</td>
+                <td>95%</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<!-- DATASET MANAGEMENT -->
+<section class="admin-tools">
+    <h2>Admin Tools</h2>
+
+    <div class="tool-grid">
+        <div class="tool-card">
+            <h3>📂 Dataset Management</h3>
+            <p>Upload new cotton leaf images to improve AI model accuracy.</p>
+            <button class="btn-primary">Upload Dataset</button>
+        </div>
+
+        <div class="tool-card">
+            <h3>🧠 Model Monitoring</h3>
+            <p>View training history, accuracy and loss graphs.</p>
+            <button class="btn-primary">View Model Stats</button>
+        </div>
+
+        <div class="tool-card">
+            <h3>⚙️ System Settings</h3>
+            <p>Manage application settings and user access.</p>
+            <button class="btn-primary">Settings</button>
+        </div>
+    </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="footer-container">
+
+            <!-- BRAND -->
+            <div class="footer-brand">
+                <h2>🌿 Cotton AI</h2>
+                <p>
+                    AI-powered cotton disease detection platform helping farmers
+                    identify crop diseases early and improve yield using deep learning.
+                </p>
+            </div>
+
+            <!-- QUICK LINKS -->
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="predict.html">Predict Disease</a></li>
+                    <li><a href="how-it-works.html">How It Works</a></li>
+                    <li><a href="disease.html">Cotton Diseases</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- FEATURES -->
+            <div class="footer-links">
+                <h4>Features</h4>
+                <ul>
+                    <li>AI Disease Detection</li>
+                    <li>95% Prediction Accuracy</li>
+                    <li>Healthy vs Diseased Comparison</li>
+                    <li>Offline Farmer Mode</li>
+                    <li>Multi-language Support</li>
+                </ul>
+            </div>
+
+            <!-- CONTACT -->
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p>📍 India</p>
+                <p>📧 support@cottonai.in</p>
+                <p>📞 +91 9XXXXXXXXX</p>
+
+                <div class="footer-social">
+                    <a href="#">🌐</a>
+                    <a href="#">📘</a>
+                    <a href="#">🐦</a>
+                    <a href="#">📸</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- BOTTOM -->
+        <div class="footer-bottom">
+            <p>
+                © 2026 Cotton AI | Built for Farmers 🌱 | Hackathon Project 🚀
+            </p>
+        </div>
+    </footer>
+
+<script src="main.js"></script>
+</body>
+</html>

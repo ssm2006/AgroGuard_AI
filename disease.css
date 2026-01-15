@@ -1,0 +1,394 @@
+/* =====================
+   GLOBAL RESET
+===================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #f4f8f5;
+    color: #1f2937;
+    font-size: 90%;
+}
+
+/* =====================
+   NAVBAR
+===================== */
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 60px;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+}
+
+.navbar nav a {
+    margin-right: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    color: #1f2937;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 700;
+    color: #15803d;
+}
+
+/* BUTTONS */
+.btn-primary {
+    background: #16a34a;
+    color: white;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 2px solid #16a34a;
+    color: #16a34a;
+    padding: 10px 22px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+
+/* =====================
+   PAGE HEADER
+===================== */
+.page-header {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #16a34a, #15803d);
+    color: #ffffff;
+}
+
+.page-header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.page-header p {
+    font-size: 18px;
+}
+
+/* =====================
+   SEARCH
+===================== */
+.search-section {
+    text-align: center;
+    padding: 25px;
+}
+
+#searchInput {
+    width: 50%;
+    max-width: 500px;
+    padding: 12px 18px;
+    border-radius: 30px;
+    border: 1px solid #d1d5db;
+    font-size: 16px;
+    outline: none;
+}
+
+/* =====================
+   DISEASE GRID
+===================== */
+.disease-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 50px 70px;
+}
+
+/* =====================
+   DISEASE CARD
+===================== */
+.disease-card {
+    position: relative;
+    background: #ffffff;
+    padding: 22px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.disease-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(0,0,0,0.12);
+}
+
+.disease-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.disease-card h2 {
+    color: #15803d;
+    margin-bottom: 8px;
+}
+
+.disease-card p {
+    font-size: 14.5px;
+    margin-bottom: 8px;
+}
+
+.disease-card ul {
+    margin-left: 18px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+/* =====================
+   SEVERITY BADGES
+===================== */
+.severity {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 5px 12px;
+    font-size: 12px;
+    border-radius: 20px;
+    color: white;
+    font-weight: 600;
+}
+
+.severity.high { background: #dc2626; }
+.severity.medium { background: #fbbf24; color: #000; }
+.severity.low { background: #16a34a; }
+
+/* =====================
+   CARD ACTIONS
+===================== */
+.card-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.card-actions button,
+.card-actions a {
+    padding: 8px 18px;
+    border-radius: 25px;
+    border: none;
+    background: #15803d;
+    color: #ffffff;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.card-actions button:hover,
+.card-actions a:hover {
+    background: #166534;
+}
+
+/* =====================
+   MODAL
+===================== */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 999;
+}
+
+.modal-content {
+    background: #ffffff;
+    padding: 25px;
+    width: 90%;
+    max-width: 500px;
+    margin: 10% auto;
+    border-radius: 20px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    right: 18px;
+    top: 12px;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+/* =====================
+   FOOTER
+===================== */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #052e16;
+    color: #d1fae5;
+    margin-top: 40px;
+}
+
+/* =====================
+   RESPONSIVE
+===================== */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 25px;
+    }
+
+    .disease-section {
+        padding: 40px 25px;
+    }
+
+    #searchInput {
+        width: 90%;
+    }
+}
+
+/* ===============================
+   ANALYTICS SECTION FIX
+================================ */
+
+.analytics-section {
+    padding: 80px 40px;
+    background: #f3f4f6;
+    position: relative;
+    z-index: 1;
+}
+
+.analytics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.chart-card {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    height: 380px; /* 🔥 IMPORTANT */
+}
+
+.chart-card h3 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+/* 🔥 THIS IS THE KEY */
+.chart-card canvas {
+    width: 100% !important;
+    height: 280px !important;
+    display: block !important;
+}
+
+/* FOOTER */
+.footer {
+    background: linear-gradient(135deg, #052e16, #14532d);
+    color: #ecfdf5;
+    padding: 60px 40px 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer h2,
+.footer h4 {
+    margin-bottom: 15px;
+    color: #bbf7d0;
+}
+
+.footer p {
+    font-size: 14px;
+    line-height: 1.7;
+    opacity: 0.9;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #ecfdf5;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #4ade80;
+}
+
+.footer-contact p {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+/* SOCIAL ICONS */
+.footer-social {
+    margin-top: 15px;
+}
+
+.footer-social a {
+    display: inline-block;
+    margin-right: 10px;
+    background: #166534;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #ecfdf5;
+    text-decoration: none;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.footer-social a:hover {
+    background: #22c55e;
+    transform: translateY(-3px);
+}
+
+/* BOTTOM BAR */
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 13px;
+    opacity: 0.8;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-social {
+        justify-content: center;
+    }
+}

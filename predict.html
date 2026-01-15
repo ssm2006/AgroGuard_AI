@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Predict Disease | Cotton AI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+    <header class="navbar">
+        <div class="logo">🌿 Cotton AI</div>
+        <nav>
+            <a href="index.html" class="active">Home</a>
+            <a href="predict.html">Predict</a>
+            <a href="how-it-works.html">How It Works</a>
+            <a href="disease.html">Diseases</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="contact.html">Contact</a>
+            <button class="btn-primary">Try Prediction</button>
+        </nav>
+    </header>
+
+    <!-- PREDICTION SECTION -->
+    <section class="predict-section">
+        <h1>Predict Cotton Disease</h1>
+        <p>
+            Upload a cotton leaf image to detect disease using Artificial Intelligence.
+            The system will analyze the image and provide disease name, accuracy,
+            and treatment recommendations.
+        </p>
+
+        <!-- Upload Area -->
+        <div class="predict-card">
+            <input type="file" id="imageInput" accept="image/*" hidden>
+            <div class="upload-box" onclick="document.getElementById('imageInput').click()">
+                <p>📷 Click to Upload Cotton Leaf Image</p>
+                <span>JPG / PNG supported</span>
+            </div>
+
+            <img id="previewImage" class="preview" />
+
+            <button class="btn-primary" onclick="analyzeDisease()">
+                Analyze Disease
+            </button>
+        </div>
+
+        <!-- 🔮 EARLY DISEASE RISK PREDICTION -->
+        <section class="future-risk" id="futureRisk" style="display:none;">
+            <h3>🔮 Early Disease Risk Prediction</h3>
+
+            <div class="risk-box">
+                <p class="risk-title">⚠️ Early Risk Detected</p>
+
+                <p>
+                    Probability of <strong>Leaf Curl Disease</strong> in next
+                    <strong>7 days</strong>:
+                </p>
+
+                <div class="risk-meter">
+                    <div class="risk-fill" id="riskFill">63%</div>
+                </div>
+
+                <p class="risk-advice">
+                    🌱 Preventive action recommended before visible symptoms appear.
+                </p>
+            </div>
+        </section>
+
+
+        <!-- 🌦️ WEATHER BASED RISK -->
+        <section class="weather-risk" id="weatherRisk" style="display:none;">
+            <h3>🌦️ Weather-Based Disease Risk</h3>
+
+            <div class="weather-grid">
+                <div class="weather-card">
+                    <span>💧 Humidity</span>
+                    <strong>78%</strong>
+                </div>
+
+                <div class="weather-card">
+                    <span>🌡️ Temperature</span>
+                    <strong>31°C</strong>
+                </div>
+
+                <div class="weather-card">
+                    <span>🌧️ Rainfall</span>
+                    <strong>Expected</strong>
+                </div>
+            </div>
+
+            <p class="weather-warning">
+                ⚠️ Current weather conditions favor disease spread.
+                Preventive action recommended.
+            </p>
+        </section>
+
+        <!-- RESULT + XAI CONTAINER -->
+        <div class="result-grid">
+
+            <!-- RESULT -->
+            <div class="result-card" id="resultCard">
+                <h2>Prediction Result</h2>
+
+                <p><strong>Disease Name:</strong> <span id="diseaseName">Bacterial Blight</span></p>
+                <p><strong>Confidence:</strong> <span id="confidence">94%</span></p>
+                <p><strong>Severity:</strong> <span class="severity high">High</span></p>
+
+                <h3>Treatment Recommendation</h3>
+                <ul>
+                    <li>Use copper-based fungicides</li>
+                    <li>Avoid overhead irrigation</li>
+                    <li>Remove infected leaves</li>
+                </ul>
+
+                <button class="btn-secondary">Download Report</button>
+            </div>
+
+            <!-- EXPLAINABLE AI -->
+            <section class="xai-section" id="xaiSection">
+                <h3>🧠 Why AI Predicted This</h3>
+
+                <div class="xai-points">
+                    <div class="xai-item">Vein thickening detected</div>
+                    <div class="xai-item">Leaf curling pattern detected</div>
+                    <div class="xai-item">Yellow mosaic texture found</div>
+                </div>
+
+                <div class="xai-confidence">
+                    AI Confidence Factors: <strong>95%</strong>
+                </div>
+            </section>
+
+        </div>
+
+    </section>
+
+    <section class="compare-section">
+        <h2>🔍 Healthy vs Diseased Leaf Comparison</h2>
+        <p class="compare-subtitle">
+            Upload cotton leaf images to visually compare healthy and infected samples.
+        </p>
+
+        <div class="compare-grid">
+
+            <!-- Healthy Leaf -->
+            <div class="compare-card">
+                <label class="compare-label">🌿 Healthy Leaf</label>
+
+                <div class="upload-box">
+                    <input type="file" id="healthyInput" accept="image/*">
+                    <span>Click to upload</span>
+                </div>
+
+                <img id="healthyPreview" src="" alt="Healthy leaf preview">
+            </div>
+
+            <!-- Diseased Leaf -->
+            <div class="compare-card">
+                <label class="compare-label">🦠 Diseased Leaf</label>
+
+                <div class="upload-box">
+                    <input type="file" id="diseasedInput" accept="image/*">
+                    <span>Click to upload</span>
+                </div>
+
+                <img id="diseasedPreview" src="" alt="Diseased leaf preview">
+            </div>
+
+        </div>
+
+        <button class="btn-primary compare-btn">🔬 Compare with AI</button>
+    </section>
+
+
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="footer-container">
+
+            <!-- BRAND -->
+            <div class="footer-brand">
+                <h2>🌿 Cotton AI</h2>
+                <p>
+                    AI-powered cotton disease detection platform helping farmers
+                    identify crop diseases early and improve yield using deep learning.
+                </p>
+            </div>
+
+            <!-- QUICK LINKS -->
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="predict.html">Predict Disease</a></li>
+                    <li><a href="how-it-works.html">How It Works</a></li>
+                    <li><a href="disease.html">Cotton Diseases</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- FEATURES -->
+            <div class="footer-links">
+                <h4>Features</h4>
+                <ul>
+                    <li>AI Disease Detection</li>
+                    <li>95% Prediction Accuracy</li>
+                    <li>Healthy vs Diseased Comparison</li>
+                    <li>Offline Farmer Mode</li>
+                    <li>Multi-language Support</li>
+                </ul>
+            </div>
+
+            <!-- CONTACT -->
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p>📍 India</p>
+                <p>📧 support@cottonai.in</p>
+                <p>📞 +91 9XXXXXXXXX</p>
+
+                <div class="footer-social">
+                    <a href="#">🌐</a>
+                    <a href="#">📘</a>
+                    <a href="#">🐦</a>
+                    <a href="#">📸</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- BOTTOM -->
+        <div class="footer-bottom">
+            <p>
+                © 2026 Cotton AI | Built for Farmers 🌱 | Hackathon Project 🚀
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        function preview(inputId, imgId) {
+            document.getElementById(inputId).addEventListener("change", function () {
+                if (this.files[0]) {
+                    document.getElementById(imgId).src =
+                        URL.createObjectURL(this.files[0]);
+                }
+            });
+        }
+
+        preview("healthyInput", "healthyPreview");
+        preview("diseasedInput", "diseasedPreview");
+    </script>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

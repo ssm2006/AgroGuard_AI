@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cotton AI | Cotton Disease Prediction</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+    <header class="navbar">
+        <div class="logo">🌿 AgroGuard AI</div>
+        <nav>
+            <a href="index.html" class="active">Home</a>
+            <a href="predict.html">Predict</a>
+            <a href="how-it-works.html">How It Works</a>
+            <a href="disease.html">Diseases</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="contact.html">Contact</a>
+            <a href="predict.html">
+                <button class="btn-primary">Try Prediction</button>
+            </a>
+            <button id="authBtn" class="btn-primary" onclick="handleAuth()">
+                Login
+            </button>
+        </nav>
+    </header>
+
+    <!-- ================= HERO SECTION ================= -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>
+                AgroGuard AI : AI-Based <span>Cotton Disease Prediction</span> System
+            </h1>
+
+            <p>
+                Cotton AI uses Artificial Intelligence and Deep Learning to detect
+                cotton leaf diseases at an early stage. Farmers can upload a cotton
+                leaf image and instantly get disease name, accuracy, and treatment
+                suggestions to protect their crop and increase yield.
+            </p>
+
+
+            <div class="hero-buttons">
+                <a href="predict.html" class="btn-primary">Upload Leaf Image</a>
+                <a href="how-it-works.html" class="btn-secondary">Learn More</a>
+            </div>
+
+        </div>
+
+        <!-- Upload Card -->
+        <div class="upload-card">
+            <h3>Upload Cotton Leaf</h3>
+            <div class="upload-box">
+                <p>📷 Drag & Drop Image</p>
+                <span>or click to browse</span>
+            </div>
+            <small>Supported formats: JPG, PNG</small>
+        </div>
+    </section>
+
+    <!-- ================= FEATURES ================= -->
+    <section class="features">
+        <h2>Why Choose Cotton AI?</h2>
+
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h3>🌱 High Accuracy</h3>
+                <p>
+                    Our AI model is trained using thousands of cotton leaf images
+                    to ensure accurate disease detection.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>⚡ Fast Prediction</h3>
+                <p>
+                    Get disease results within seconds after uploading the image.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>🧪 Treatment Advice</h3>
+                <p>
+                    Provides pesticide and organic treatment recommendations.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>👨‍🌾 Farmer Friendly</h3>
+                <p>
+                    Simple design that can be used easily by farmers.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= HOW IT WORKS ================= -->
+    <section class="how-it-works">
+        <h2>How It Works</h2>
+
+        <div class="steps">
+            <div class="step">
+                <span>1</span>
+                <h4>Capture Image</h4>
+                <p>Take a clear photo of the cotton leaf.</p>
+            </div>
+
+            <div class="step">
+                <span>2</span>
+                <h4>AI Analysis</h4>
+                <p>AI model analyzes the leaf image.</p>
+            </div>
+
+            <div class="step">
+                <span>3</span>
+                <h4>Get Result</h4>
+                <p>Disease name with solution is displayed.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= USE CASES ================= -->
+    <section class="features">
+        <h2>Who Can Use Cotton AI?</h2>
+
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h3>👨‍🌾 Farmers</h3>
+                <p>Early disease detection to prevent crop loss.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>🎓 Agriculture Students</h3>
+                <p>Learn real-world AI-based crop diagnosis.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>🏢 Agri Companies</h3>
+                <p>Large-scale crop monitoring & analytics.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>🧠 Researchers</h3>
+                <p>Dataset-driven disease analysis.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= CTA ================= -->
+    <section class="cta">
+        <h2>Protect Your Cotton Crop with AI</h2>
+        <p>Early disease detection saves yield and reduces loss.</p>
+        <button class="btn-primary">Start Prediction</button>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="footer-container">
+
+            <!-- BRAND -->
+            <div class="footer-brand">
+                <h2>🌿 Cotton AI</h2>
+                <p>
+                    AI-powered cotton disease detection platform helping farmers
+                    identify crop diseases early and improve yield using deep learning.
+                </p>
+            </div>
+
+            <!-- QUICK LINKS -->
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="predict.html">Predict Disease</a></li>
+                    <li><a href="how-it-works.html">How It Works</a></li>
+                    <li><a href="disease.html">Cotton Diseases</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- FEATURES -->
+            <div class="footer-links">
+                <h4>Features</h4>
+                <ul>
+                    <li>AI Disease Detection</li>
+                    <li>95% Prediction Accuracy</li>
+                    <li>Healthy vs Diseased Comparison</li>
+                    <li>Offline Farmer Mode</li>
+                    <li>Multi-language Support</li>
+                </ul>
+            </div>
+
+            <!-- CONTACT -->
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p>📍 India</p>
+                <p>📧 support@cottonai.in</p>
+                <p>📞 +91 9XXXXXXXXX</p>
+
+                <div class="footer-social">
+                    <a href="#">🌐</a>
+                    <a href="#">📘</a>
+                    <a href="#">🐦</a>
+                    <a href="#">📸</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- BOTTOM -->
+        <div class="footer-bottom">
+            <p>
+                © 2026 Cotton AI | Built for Farmers 🌱 | Hackathon Project 🚀
+            </p>
+        </div>
+    </footer>
+
+    <script src="login.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

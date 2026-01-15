@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cotton Diseases | Cotton AI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="disease.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+    <header class="navbar">
+        <div class="logo">🌿 Cotton AI</div>
+        <nav>
+            <a href="index.html" class="active">Home</a>
+            <a href="predict.html">Predict</a>
+            <a href="how-it-works.html">How It Works</a>
+            <a href="disease.html">Diseases</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="contact.html">Contact</a>
+            <button class="btn-primary">Try Prediction</button>
+        </nav>
+    </header>
+
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+        <h1>Common Cotton Diseases</h1>
+        <p>Identify symptoms early and protect your cotton crop</p>
+    </section>
+
+    <!-- SEARCH BAR -->
+    <section class="search-section">
+        <input type="text" id="searchInput" placeholder="🔍 Search disease name...">
+    </section>
+
+    <!-- DISEASE CARDS -->
+    <section class="disease-section">
+
+        <div class="disease-card">
+            <span class="severity high">High Severity</span>
+            <img src="imgs/blight.jpg" alt="Bacterial Blight">
+            <h2>Bacterial Blight</h2>
+            <p><strong>Symptoms:</strong> Angular leaf spots, yellowing, leaf drop.</p>
+            <p><strong>Cause:</strong> Bacterial infection through seeds and rain.</p>
+            <ul>
+                <li>Use certified seeds</li>
+                <li>Avoid overhead irrigation</li>
+                <li>Copper fungicide spray</li>
+            </ul>
+            <div class="card-actions">
+                <button onclick="openModal('blight')">Know More</button>
+                <a href="predict.html">Predict</a>
+            </div>
+        </div>
+
+        <div class="disease-card">
+            <span class="severity medium">Medium Severity</span>
+            <img src="imgs/Fusarium_wilt.jpg" alt="Fusarium Wilt">
+            <h2>Fusarium Wilt</h2>
+            <p><strong>Symptoms:</strong> Wilting, stunted growth, yellow leaves.</p>
+            <p><strong>Cause:</strong> Soil-borne fungus.</p>
+            <ul>
+                <li>Crop rotation</li>
+                <li>Resistant varieties</li>
+                <li>Improve drainage</li>
+            </ul>
+            <div class="card-actions">
+                <button onclick="openModal('blight')">Know More</button>
+                <a href="predict.html">Predict</a>
+            </div>
+        </div>
+
+        <div class="disease-card">
+            <span class="severity low">Low Severity</span>
+            <img src="imgs/Alternaria.webp" alt="Alternaria Leaf Spot">
+            <h2>Alternaria Leaf Spot</h2>
+            <p><strong>Symptoms:</strong> Brown circular spots.</p>
+            <p><strong>Cause:</strong> Fungal infection in humid climate.</p>
+            <ul>
+                <li>Field hygiene</li>
+                <li>Proper spacing</li>
+                <li>Recommended fungicide</li>
+            </ul>
+            <div class="card-actions">
+                <button onclick="openModal('blight')">Know More</button>
+                <a href="predict.html">Predict</a>
+            </div>
+        </div>
+
+        <div class="disease-card">
+            <span class="severity low">Low Severity</span>
+            <img src="imgs/leaf curl.webp" alt="Alternaria Leaf Spot">
+            <h2>Leaf Curl Virus</h2>
+            <p><strong>Symptoms:</strong> Curled and thickened leaves.</p>
+            <p><strong>Cause:</strong> Whitefly-transmitted virus.</p>
+            <ul>
+                <li>Whitefly control</li>
+                <li>Resistant seeds</li>
+                <li>Remove infected plants</li>
+            </ul>
+            <div class="card-actions">
+                <button onclick="openModal('blight')">Know More</button>
+                <a href="predict.html">Predict</a>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- ANALYTICS SECTION -->
+    <section class="analytics-section">
+        <h2>📊 AI Prediction Analytics</h2>
+
+        <div class="analytics-grid">
+            <div class="chart-card">
+                <h3>Disease Occurrence Trend</h3>
+                <canvas id="diseaseTrendChart"></canvas>
+            </div>
+
+            <div class="chart-card">
+                <h3>Prediction Accuracy</h3>
+                <canvas id="accuracyChart"></canvas>
+            </div>
+
+            <div class="chart-card">
+                <h3>Most Detected Disease</h3>
+                <canvas id="diseasePieChart"></canvas>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- MODAL -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">×</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+   <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="footer-container">
+
+            <!-- BRAND -->
+            <div class="footer-brand">
+                <h2>🌿 Cotton AI</h2>
+                <p>
+                    AI-powered cotton disease detection platform helping farmers
+                    identify crop diseases early and improve yield using deep learning.
+                </p>
+            </div>
+
+            <!-- QUICK LINKS -->
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="predict.html">Predict Disease</a></li>
+                    <li><a href="how-it-works.html">How It Works</a></li>
+                    <li><a href="disease.html">Cotton Diseases</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- FEATURES -->
+            <div class="footer-links">
+                <h4>Features</h4>
+                <ul>
+                    <li>AI Disease Detection</li>
+                    <li>95% Prediction Accuracy</li>
+                    <li>Healthy vs Diseased Comparison</li>
+                    <li>Offline Farmer Mode</li>
+                    <li>Multi-language Support</li>
+                </ul>
+            </div>
+
+            <!-- CONTACT -->
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p>📍 India</p>
+                <p>📧 support@cottonai.in</p>
+                <p>📞 +91 9XXXXXXXXX</p>
+
+                <div class="footer-social">
+                    <a href="#">🌐</a>
+                    <a href="#">📘</a>
+                    <a href="#">🐦</a>
+                    <a href="#">📸</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- BOTTOM -->
+        <div class="footer-bottom">
+            <p>
+                © 2026 Cotton AI | Built for Farmers 🌱 | Hackathon Project 🚀
+            </p>
+        </div>
+    </footer>
+
+
+    <!-- CHART JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            new Chart(document.getElementById('diseaseTrendChart'), {
+                type: 'line',
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
+                    datasets: [{
+                        label: 'Disease Cases',
+                        data: [2, 4, 3, 6, 5],
+                        borderColor: '#16a34a',
+                        tension: 0.4,
+                        fill: false
+                    }]
+                }
+            });
+
+            new Chart(document.getElementById('accuracyChart'), {
+                type: 'bar',
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
+                    datasets: [{
+                        label: 'Accuracy %',
+                        data: [92, 93, 95, 94, 96],
+                        backgroundColor: '#22c55e'
+                    }]
+                }
+            });
+
+            new Chart(document.getElementById('diseasePieChart'), {
+                type: 'doughnut',
+                data: {
+                    labels: ['Bacterial Blight', 'Fusarium Wilt', 'Leaf Curl'],
+                    datasets: [{
+                        data: [45, 30, 25],
+                        backgroundColor: ['#dc2626', '#fbbf24', '#16a34a']
+                    }]
+                }
+            });
+
+        });
+    </script>
+
+    <script src="main.js"></script>
+</body>
+
+
+</html>

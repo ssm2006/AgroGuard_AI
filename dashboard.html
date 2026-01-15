@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Farmer Dashboard | Cotton AI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+    <header class="navbar">
+        <div class="logo">🌿 Cotton AI</div>
+        <nav>
+            <a href="index.html" class="active">Home</a>
+            <a href="predict.html">Predict</a>
+            <a href="how-it-works.html">How It Works</a>
+            <a href="disease.html">Diseases</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="contact.html">Contact</a>
+            <button class="btn-primary">Try Prediction</button>
+        </nav>
+    </header>
+
+    <!-- DASHBOARD HEADER -->
+    <section class="page-header">
+        <h1>Welcome, Farmer 👋</h1>
+        <p>Your AI-powered cotton crop monitoring center</p>
+    </section>
+
+    <!-- QUICK ACTIONS -->
+    <section class="dashboard-actions">
+        <a href="predict.html" class="btn-primary">📸 Predict New Image</a>
+        <a href="diseases.html" class="btn-secondary">🦠 View Diseases</a>
+    </section>
+
+    <!-- SUMMARY CARDS -->
+    <section class="dashboard-summary">
+
+        <div class="summary-card">
+            <h2>12</h2>
+            <p>Total Predictions</p>
+        </div>
+
+        <div class="summary-card">
+            <h2>3</h2>
+            <p>Diseases Detected</p>
+        </div>
+
+        <div class="summary-card">
+            <h2>82%</h2>
+            <p>Healthy Crop Score</p>
+            <div class="progress-bar">
+                <span style="width:82%"></span>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- AI INSIGHTS -->
+    <section class="ai-insights">
+        <h2>🤖 AI Crop Insights</h2>
+        <div class="insight-card">
+            <p>• Crop health is <strong>stable</strong>, but humidity may increase fungal risk.</p>
+            <p>• Spray preventive fungicide in next 5–7 days.</p>
+            <p>• Avoid overhead irrigation.</p>
+        </div>
+    </section>
+
+    <!-- WEATHER IMPACT -->
+    <section class="weather-card">
+        <h2>🌦 Weather Impact (Demo)</h2>
+        <p><strong>Temperature:</strong> 32°C</p>
+        <p><strong>Humidity:</strong> 78%</p>
+        <p><strong>Risk Level:</strong> Medium (Fungal Diseases)</p>
+    </section>
+
+    <!-- PREDICTION HISTORY -->
+    <section class="dashboard-history">
+        <h2>Prediction History</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Disease</th>
+                    <th>Confidence</th>
+                    <th>Severity</th>
+                    <th>Report</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>12 Aug 2026</td>
+                    <td>Bacterial Blight</td>
+                    <td>94%</td>
+                    <td class="severity-badge high">High</td>
+                    <td><button class="btn-secondary">Download</button></td>
+                </tr>
+
+                <tr>
+                    <td>02 Aug 2026</td>
+                    <td>Healthy Leaf</td>
+                    <td>98%</td>
+                    <td class="severity-badge low">Low</td>
+                    <td><button class="btn-secondary">Download</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section class="heatmap-section">
+        <h2>🌍 Cotton Disease Risk Map</h2>
+        <p>AI-based regional disease intensity</p>
+        <div id="map"></div>
+    </section>
+
+
+    <!-- ALERTS -->
+    <section class="alerts-section">
+        <h2>🚨 Recent Alerts</h2>
+        <div class="alert warning">
+            High humidity detected – monitor Alternaria symptoms.
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="footer-container">
+
+            <!-- BRAND -->
+            <div class="footer-brand">
+                <h2>🌿 Cotton AI</h2>
+                <p>
+                    AI-powered cotton disease detection platform helping farmers
+                    identify crop diseases early and improve yield using deep learning.
+                </p>
+            </div>
+
+            <!-- QUICK LINKS -->
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="predict.html">Predict Disease</a></li>
+                    <li><a href="how-it-works.html">How It Works</a></li>
+                    <li><a href="disease.html">Cotton Diseases</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- FEATURES -->
+            <div class="footer-links">
+                <h4>Features</h4>
+                <ul>
+                    <li>AI Disease Detection</li>
+                    <li>95% Prediction Accuracy</li>
+                    <li>Healthy vs Diseased Comparison</li>
+                    <li>Offline Farmer Mode</li>
+                    <li>Multi-language Support</li>
+                </ul>
+            </div>
+
+            <!-- CONTACT -->
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p>📍 India</p>
+                <p>📧 support@cottonai.in</p>
+                <p>📞 +91 9XXXXXXXXX</p>
+
+                <div class="footer-social">
+                    <a href="#">🌐</a>
+                    <a href="#">📘</a>
+                    <a href="#">🐦</a>
+                    <a href="#">📸</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- BOTTOM -->
+        <div class="footer-bottom">
+            <p>
+                © 2026 Cotton AI | Built for Farmers 🌱 | Hackathon Project 🚀
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <script>
+        const map = L.map('map').setView([20.5937, 78.9629], 5); // India
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+        // Sample disease zones
+        L.circle([19.0760, 72.8777], { color: 'red', radius: 50000 })
+            .addTo(map).bindPopup("High Disease Risk");
+
+        L.circle([23.2599, 77.4126], { color: 'orange', radius: 40000 })
+            .addTo(map).bindPopup("Medium Risk");
+
+        L.circle([17.3850, 78.4867], { color: 'green', radius: 30000 })
+            .addTo(map).bindPopup("Low Risk");
+    </script>
+
+</body>
+
+</html>

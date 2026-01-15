@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Contact & Farmer Support | Cotton AI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+    <header class="navbar">
+        <div class="logo">🌿 Cotton AI</div>
+        <nav>
+            <a href="index.html" class="active">Home</a>
+            <a href="predict.html">Predict</a>
+            <a href="how-it-works.html">How It Works</a>
+            <a href="disease.html">Diseases</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="contact.html">Contact</a>
+            <button class="btn-primary">Try Prediction</button>
+        </nav>
+    </header>
+
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+        <h1>Smart Farmer Support Center</h1>
+        <p>AI + Human expertise for cotton crop protection</p>
+    </section>
+
+    <!-- LIVE STATUS -->
+    <div class="status-bar">
+        🟢 Experts Online | Avg Response Time: 15 mins
+    </div>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact-section">
+
+        <!-- SMART CONTACT FORM -->
+        <div class="contact-card">
+            <h2>Submit Your Query</h2>
+            <p>Your request will be prioritized using AI logic.</p>
+
+            <form id="contactForm">
+                <input type="text" placeholder="Farmer Name" required>
+                <input type="tel" placeholder="Mobile Number" required>
+                <input type="email" placeholder="Email Address" required>
+
+                <input type="text" placeholder="District, State" required>
+
+                <select id="queryType" required>
+                    <option value="">Select Query Type</option>
+                    <option value="emergency">🚨 Emergency Crop Damage</option>
+                    <option value="disease">🦠 Disease Prediction Issue</option>
+                    <option value="treatment">💊 Treatment Guidance</option>
+                    <option value="technical">🛠 Technical Support</option>
+                </select>
+
+                <input type="file" accept="image/*">
+
+                <textarea rows="5" placeholder="Describe your problem"></textarea>
+
+                <label class="checkbox-wrap">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                    I agree to share data for improving AI predictions
+                </label>
+
+
+                <button type="submit" class="btn-primary">Submit Request</button>
+            </form>
+
+            <div id="alertBox"></div>
+        </div>
+
+        <!-- SUPPORT INFO -->
+        <div class="contact-info">
+            <h3>Support Details</h3>
+            <p><strong>Email:</strong> support@cottonai.in</p>
+            <p><strong>Helpline:</strong> +91 9XXXXXXXXX</p>
+            <p><strong>Working Hours:</strong> 9 AM – 6 PM</p>
+
+            <div class="emergency-box">
+                <h4>🚨 Emergency Advisory</h4>
+                <p>If disease severity is high, contact local agriculture officers immediately.</p>
+            </div>
+
+            <div class="support-links">
+                <a href="#" class="support-btn whatsapp">💬 WhatsApp Expert</a>
+                <a href="#" class="support-btn facebook">📘 Facebook</a>
+                <a href="#" class="support-btn website">🌐 Website</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <h4>How accurate is Cotton AI?</h4>
+            <p>Our CNN model provides up to 95% accuracy based on trained datasets.</p>
+        </div>
+
+        <div class="faq-item">
+            <h4>What if confidence is low?</h4>
+            <p>The system recommends retaking images or consulting experts.</p>
+        </div>
+
+        <div class="faq-item">
+            <h4>Is this free for farmers?</h4>
+            <p>Yes, basic prediction and support are completely free.</p>
+        </div>
+    </section>
+
+
+    <!-- CHATBOT -->
+    <div class="chatbot">
+        <div class="chat-header">
+            <span>🌿 Cotton AI Assistant</span>
+
+            <select id="languageSelect">
+                <option value="en">English</option>
+                <option value="hi">हिंदी</option>
+                <option value="mr">मराठी</option>
+            </select>
+        </div>
+
+        <div class="chat-body" id="chatBody">
+            <p class="bot-msg">Hello 👋 Ask me about cotton diseases.</p>
+        </div>
+
+        <input type="text" id="userInput" placeholder="Type your question..." />
+    </div>
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="footer-container">
+
+            <!-- BRAND -->
+            <div class="footer-brand">
+                <h2>🌿 Cotton AI</h2>
+                <p>
+                    AI-powered cotton disease detection platform helping farmers
+                    identify crop diseases early and improve yield using deep learning.
+                </p>
+            </div>
+
+            <!-- QUICK LINKS -->
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="predict.html">Predict Disease</a></li>
+                    <li><a href="how-it-works.html">How It Works</a></li>
+                    <li><a href="disease.html">Cotton Diseases</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- FEATURES -->
+            <div class="footer-links">
+                <h4>Features</h4>
+                <ul>
+                    <li>AI Disease Detection</li>
+                    <li>95% Prediction Accuracy</li>
+                    <li>Healthy vs Diseased Comparison</li>
+                    <li>Offline Farmer Mode</li>
+                    <li>Multi-language Support</li>
+                </ul>
+            </div>
+
+            <!-- CONTACT -->
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p>📍 India</p>
+                <p>📧 support@cottonai.in</p>
+                <p>📞 +91 9XXXXXXXXX</p>
+
+                <div class="footer-social">
+                    <a href="#">🌐</a>
+                    <a href="#">📘</a>
+                    <a href="#">🐦</a>
+                    <a href="#">📸</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- BOTTOM -->
+        <div class="footer-bottom">
+            <p>
+                © 2026 Cotton AI | Built for Farmers 🌱 | Hackathon Project 🚀
+            </p>
+        </div>
+    </footer>
+
+    <script src="chatbot.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
