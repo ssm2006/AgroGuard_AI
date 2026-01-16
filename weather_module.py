@@ -1,40 +1,30 @@
 import requests
-import json
+import time
 from datetime import datetime
 
-# Function to fetch weather data automatically
-def get_weather_data(city):
-    api_key = "YOUR_API_KEY_HERE"   # Replace with your API key
-    url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric"
+API_KEY = "YOUR_API_KEY"
 
+def get_weather_data(city):
+    url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&units=metric"
     response = requests.get(url)
 
     if response.status_code == 200:
         data = response.json()
-
-        weather_info = {
-            "City": city,
-            "Temperature (°C)": data["main"]["temp"],
-            "Humidity (%)": data["main"]["humidity"],
-            "Pressure (hPa)": data["main"]["pressure"],
-            "Weather Condition": data["weather"][0]["description"],
-            "Wind Speed (m/s)": data["wind"]["speed"],
-            "Date & Time": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        return {
+            "city": city,
+            "temperature": data["main"]["temp"],
+            "humidity": data["main"]["humidity"],
+            "pressure": data["main"]["pressure"],
+            "weather": data["weather"][0]["description"],
+            "wind_speed": data["wind"]["speed"],
+            "time": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         }
-
-        return weather_info
-    else:
-        return "Error fetching weather data"
+    return None
 
 
-# Main execution
-if __name__ == "__main__":
-    city_name = input("Enter city name: ")
-    weather_data = get_weather_data(city_name)
-
-    print("\n--- Automatic Weather Data ---")
-    if isinstance(weather_data, dict):
-        for key, value in weather_data.items():
-            print(f"{key}: {value}")
-    else:
-        print(weather_data)
+# 🔁 Automatic update loop (INSIDE MODULE)
+def auto_weather_update(city, interval=600):
+    while True:
+        weather = get_weather_data(city)
+        print("Weather Updated:", weather)
+        time.sleep(interval)
