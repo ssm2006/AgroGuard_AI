@@ -21,8 +21,6 @@ def get_weather_data(city):
         }
     return None
 
-
-# 🔁 Automatic update loop (INSIDE MODULE)
 def auto_weather_update(city, interval=600):
     while True:
         weather = get_weather_data(city)
