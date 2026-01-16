@@ -1,21 +1,23 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 import os
 import random
 import threading
 
-# 🔹 Import weather background function
+# 🔹 Weather module import
 from weather_module import auto_weather_update
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder="static")
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # -------------------------------
-# Upload Folder Setup
+# Upload Folder
 # -------------------------------
-UPLOAD_FOLDER = "static/uploads"
+UPLOAD_FOLDER = os.path.join("static", "uploads")
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 # -------------------------------
-# 🧠 Dummy AI + Knowledge Base
+# 🧠 Dummy AI Database
 # -------------------------------
 DISEASE_DB = {
     "Bacterial Blight": {
@@ -53,24 +55,55 @@ def dummy_ai_prediction():
     return disease, DISEASE_DB[disease]
 
 # -------------------------------
-# 🌦️ Start Weather Module (Background Thread)
+# 🌦 Weather Background Thread
 # -------------------------------
 weather_thread = threading.Thread(
     target=auto_weather_update,
-    args=("Pune",),   # city
+    args=("Pune",),
     daemon=True
 )
 weather_thread.start()
 print("Weather module running in background...")
 
 # -------------------------------
-# 🌿 Disease Analysis API
+# 🌐 Page Routes (HTML in ROOT)
+# -------------------------------
+@app.route("/")
+def home():
+    return send_from_directory(BASE_DIR, "index.html")
+
+@app.route("/about")
+def about():
+    return send_from_directory(BASE_DIR, "about.html")
+
+@app.route("/dashboard")
+def dashboard():
+    return send_from_directory(BASE_DIR, "dashboard.html")
+
+@app.route("/how-it-works")
+def how_it_works():
+    return send_from_directory(BASE_DIR, "how-it-works.html")
+
+@app.route("/disease")
+def disease():
+    return send_from_directory(BASE_DIR, "disease.html")
+
+@app.route("/predict")
+def predict():
+    return send_from_directory(BASE_DIR, "predict.html")
+
+@app.route("/login")
+def login():
+    return send_from_directory(BASE_DIR, "login.html")
+
+# -------------------------------
+# 🌿 Disease Detection API
 # -------------------------------
 @app.route("/analyze", methods=["POST"])
 def analyze():
     file = request.files["image"]
-    path = os.path.join(UPLOAD_FOLDER, file.filename)
-    file.save(path)
+    file_path = os.path.join(UPLOAD_FOLDER, file.filename)
+    file.save(file_path)
 
     disease, info = dummy_ai_prediction()
 
